@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Heart, Sparkles, Dumbbell, Brain, TrendingUp, Shield, Zap, Users, ChevronRight, Menu, X, ArrowRight, Star, Check, Play } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -307,7 +308,7 @@ const App = () => {
       fontSize: '56px',
       fontWeight: 'bold',
       textAlign: 'center',
-      marginBottom: '64px',
+      marginBottom: '24px',
       background: 'linear-gradient(90deg, #e9d5ff 0%, #fbcfe8 100%)',
       WebkitBackgroundClip: 'text',
       WebkitTextFillColor: 'transparent',
@@ -326,7 +327,8 @@ const App = () => {
       fontSize: '28px',
       fontWeight: '600',
       color: '#d8b4fe',
-      marginTop: '24px'
+      marginTop: '24px',
+      textAlign:'center'
     },
     appsGrid: {
       display: 'grid',
@@ -609,6 +611,7 @@ const App = () => {
       width: '40px',
       height: '40px',
       background: 'rgba(168, 85, 247, 0.1)',
+      color:'white',
       borderRadius: '50%',
       display: 'flex',
       alignItems: 'center',
@@ -1070,7 +1073,7 @@ const App = () => {
               >What's Coming Next</motion.h2>
               
               <motion.p 
-                style={{...styles.aboutText, textAlign: 'left', fontSize: '20px', marginBottom: '32px'}}
+                style={{...styles.aboutText, textAlign: 'left', fontSize: '20px',margin:'0', marginBottom: '32px'}}
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -1160,7 +1163,7 @@ const App = () => {
                           ))}
                         </div>
                         
-                        <div style={{ fontSize: '64px', textAlign: 'center', color: '#d8b4fe', marginBottom: '16px' }}>"</div>
+                        {/* <div style={{ fontSize: '64px', textAlign: 'center', color: '#d8b4fe', marginBottom: '16px' }}>"</div> */}
                         <p style={styles.quote}>
                           {testimonial.quote}
                         </p>
@@ -1313,7 +1316,7 @@ const App = () => {
                   <span style={styles.logoText}>Wellnex</span>
                 </motion.div>
                 <p style={{ color: '#9ca3af', margin: '16px 0' }}>Empowering Wellness Through Technology</p>
-                <div style={styles.socialLinks}>
+                {/* <div style={styles.socialLinks}>
                   {['twitter', 'facebook', 'instagram', 'linkedin'].map((social, idx) => (
                     <motion.button
                       key={idx}
@@ -1323,7 +1326,18 @@ const App = () => {
                       <div style={{ width: '20px', height: '20px', background: '#d8b4fe', borderRadius: '50%' }}></div>
                     </motion.button>
                   ))}
-                </div>
+                </div> */}
+                <div style={styles.socialLinks}>
+      {[<FaTwitter />, <FaFacebook />, <FaInstagram />, <FaLinkedin />].map((icon, idx) => (
+        <motion.button
+          key={idx}
+          whileHover={{ scale: 1.1 }}
+          style={styles.socialButton}
+        >
+          {icon}
+        </motion.button>
+      ))}
+    </div>
               </div>
 
               <div>
